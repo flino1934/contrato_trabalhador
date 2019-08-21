@@ -18,7 +18,8 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		String departmentName = JOptionPane.showInputDialog("Enter departament's name: ");
 		String workerName = JOptionPane.showInputDialog("Name: ");
-		String workerLevel = JOptionPane.showInputDialog("Level: ");
+		String[] select = { "JUNIOR", "MID_LEVEL", "SENIOR"};
+		String workerLevel = (String) JOptionPane.showInputDialog(null, "Level... ","Work Level select: ", JOptionPane.QUESTION_MESSAGE, null, select,select[0]);
 		Double baseSalary = Double.parseDouble(JOptionPane.showInputDialog("Base salary: "));
 		
 		Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
